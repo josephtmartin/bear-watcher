@@ -1,4 +1,5 @@
-import { cardBuilder } from "../components/river.js";
+import { cardBuilder } from '../components/river.js';
+
 
 const bears = [];
 
@@ -19,7 +20,7 @@ const addBearForm = () => {
 };
 
 const handleButtonClick = () => {
-  $('#submit').click( () => {
+  $('#submit').click(() => {
     let bearInfo = {};
     bearInfo.image = $('#bear-image').val();
     bearInfo.name = $('#bear-name').val();
@@ -27,11 +28,11 @@ const handleButtonClick = () => {
     emptyForm();
     cardBuilder(bears);
   });
-}
+};
 
 const emptyForm = () => {
-    $('#bear-image').val('');
-    $('#bear-name').val('');
-}
+  $('#bear-image').val('');
+  $('#bear-name').val('');
+};
 
 export { addBearForm, handleButtonClick };

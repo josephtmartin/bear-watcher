@@ -1,0 +1,21 @@
+.form-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bear--form-container {
+    display: flex;
+    justify-content: center;
+}
+
+.bear--form-container .btn {
+    margin-left: 40%;
+    margin-right: 40%;
+}
+
+.bear--cards-container {
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap;
+}
