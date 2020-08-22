@@ -1,5 +1,9 @@
+import { cardBuilder } from "../components/river.js";
+
+const bears = [];
+
 const addBearForm = () => {
-  $('#bearForm').html (`
+  $('#bearForm').html(`
     <form>
         <div class="form-group">
             <label for="bear-image">Image URL:</label>
@@ -9,9 +13,25 @@ const addBearForm = () => {
             <label for="bear-name">Bear Name:</label>
             <input type="text" class="form-control" id="bear-name" placeholder="Ex:Yogi">
         </div>
-        <button type="button" class="btn btn-primary btn-lg">Large button</button>
+        <button type="button" class="btn btn-primary btn-lg" id="submit">Submit</button>
     </form>
     `);
 };
 
-export { addBearForm }
+const handleButtonClick = () => {
+  $('#submit').click( () => {
+    let bearInfo = {};
+    bearInfo.image = $('#bear-image').val();
+    bearInfo.name = $('#bear-name').val();
+    bears.push(bearInfo);
+    emptyForm();
+    cardBuilder(bears);
+  });
+}
+
+const emptyForm = () => {
+    $('#bear-image').val('');
+    $('#bear-name').val('');
+}
+
+export { addBearForm, handleButtonClick };
